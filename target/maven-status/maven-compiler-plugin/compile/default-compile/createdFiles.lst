@@ -1,0 +1,14 @@
+com\niit\collab\dao\UsersDAOImpl.class
+com\niit\collab\model\Blog.class
+com\niit\collab\model\Forum.class
+com\niit\collab\dao\ForumDAO.class
+com\niit\collab\model\User.class
+com\niit\collab\model\Job.class
+com\niit\collab\model\Event.class
+com\niit\service\BlogService.class
+com\niit\service\BlogServiceImpl.class
+com\niit\collab\dao\BlogDAOImpl.class
+com\niit\collab\controllers\BlogController.class
+com\niit\collab\dao\BlogDAO.class
+com\niit\collab\dao\ForumDAOImpl.class
+com\niit\collab\dao\UsersDAO.class
