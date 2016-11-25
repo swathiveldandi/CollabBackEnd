@@ -1,51 +1,86 @@
 package com.niit.collab.dao;
+
+import java.util.List;
+
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.niit.collab.model.User;
+import com.niit.collab.model.Blog;
+import com.niit.collab.model.Users;
 
-
-@SuppressWarnings("deprecation")
-@Repository
+@Repository(value="usersDAO")
 public class UsersDAOImpl implements UsersDAO {
+
 
 	@Autowired
 	private SessionFactory sessionFactory;
-
-	/* Used for creating or updating user */
-	@Transactional
-	public void saveOrUpdate(User user) {
-		sessionFactory.getCurrentSession().saveOrUpdate(user);
+	public UsersDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory=sessionFactory;
 	}
-
-	/* Used for deleting user */
 	@Transactional
-	public void delete(User user) {
-		sessionFactory.getCurrentSession().delete(user);
-	}
-
-	/* Used to retrieve single user based on username */
-	@Transactional
-	public User getUser(String username) {
-		Criteria c=sessionFactory.getCurrentSession().createCriteria(User.class);
-		c.add(Restrictions.eq("username", username));
-		User user=(User)c.uniqueResult();
-		return user;
+	public boolean saveOrUpdate(Users users) {
+		try {
+			sessionFactory.getCurrentSession().saveOrUpdate(users);
+			
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Transactional
-	public User viewUser(int userid) {
-		Criteria c=sessionFactory.getCurrentSession().createCriteria(User.class);
-		c.add(Restrictions.eq("userid", userid));
-		User blog=(User) c.uniqueResult();
-		return blog;
+	public boolean delete(Users users) {
+		try {
+			sessionFactory.getCurrentSession().delete(users);
+			
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	@SuppressWarnings({ "deprecation", "unchecked" })
+	@Transactional
+	public List<Users> list() {
+		Criteria c=sessionFactory.getCurrentSession().createCriteria(Users.class);
+		List<Users> list=c.list();
+		return list;
+	}
+	@SuppressWarnings({ "rawtypes", "unchecked", "deprecation" })
+	@Transactional
+	public Users getuser(int id) {
+		String hql = "from Users where id= "+ "'"+ id+"'" ;
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		List<Users>list= query.list();
 		
+		if(list==null)
+		{
+			return null;
+		}
+		else
+		{
+			return list.get(0);
+		}
+	}
+	@SuppressWarnings({ "rawtypes", "deprecation", "unchecked" })
+	@Transactional
+	public Users authuser(String username, String password) {
+		String hql="from Users where username= "+"'"+username+"'"+"and password= "+"'"+password+"'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Users>list=query.list();
+		if(list==null)
+		{
+			return null;
+		}
+		else
+		{
+			return list.get(0);
+		}
 	}
 
 }
-
-

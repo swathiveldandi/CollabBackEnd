@@ -43,7 +43,7 @@ public class BlogController {
 	public ResponseEntity<Blog> editBlog(@PathVariable("blogid") int blogid)
 	{
 		Blog blog=blogService.editBlog(blogid);
-		return new ResponseEntity<Blog>(blog, HttpStatus.OK);
+  		return new ResponseEntity<Blog>(blog, HttpStatus.OK);
 	}
 }
 

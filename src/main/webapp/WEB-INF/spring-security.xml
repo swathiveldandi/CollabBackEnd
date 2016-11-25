@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/security"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" 
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -43,4 +43,4 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 				authorities-by-username-query="select username, Role from userdetails where username =?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
-</beans:beans>
+</beans:beans> -->

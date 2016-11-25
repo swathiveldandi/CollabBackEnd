@@ -1,19 +1,14 @@
 package com.niit.collab.dao;
 
-import com.niit.collab.model.User;
+import java.util.List;
+
+import com.niit.collab.model.Users;
 
 public interface UsersDAO {
-	
-	/*Used for creating or updating user*/
-	public void saveOrUpdate(User users);
-	
-	/*	Used for deleting user*/
-	public void delete(User user);
-	
-	/*Used to retrieve single user based on username*/
-	public User getUser(String username);
-	
-	public User viewUser(int blogid);
+
+	public boolean saveOrUpdate(Users users);
+	public boolean delete(Users users);
+	public List<Users>list();
+	public Users getuser(int id);
+	public Users authuser(String username,String password);
 }
-
-

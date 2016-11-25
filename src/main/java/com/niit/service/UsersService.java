@@ -1,4 +1,4 @@
-package com.niit.service;
+/*package com.niit.service;
 import javax.servlet.http.HttpSession;
 
 import com.niit.collab.model.User;
@@ -8,14 +8,14 @@ import com.niit.collab.model.User;
 
 public interface UsersService {
 
-	/*Creating new user*/
+	Creating new user
 	public void UserRegistration(User user);
 	
-	/*Used to save userid and name in session on Successfull Login*/
+	Used to save userid and name in session on Successfull Login
 	public void LoginSuccess(HttpSession session);
 	
 	public User viewUser(HttpSession session);
 }
 
 
-
+*/
