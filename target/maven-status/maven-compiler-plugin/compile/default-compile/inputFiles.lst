@@ -1,4 +1,3 @@
-D:\DT\CollabBackEnd\src\main\java\config\ApplicationContextConfiguration.java
 D:\DT\CollabBackEnd\src\main\java\com\niit\collab\controllers\UserController.java
 D:\DT\CollabBackEnd\src\main\java\com\niit\collab\dao\UsersDAOImpl.java
 D:\DT\CollabBackEnd\src\main\java\com\niit\collab\controllers\ForumCommentController.java
@@ -23,6 +22,8 @@ D:\DT\CollabBackEnd\src\main\java\com\niit\service\UsersServiceImpl.java
 D:\DT\CollabBackEnd\src\main\java\com\niit\collab\model\Friend.java
 D:\DT\CollabBackEnd\src\main\java\com\niit\collab\dao\FriendDAOImpl.java
 D:\DT\CollabBackEnd\src\main\java\com\niit\service\ForumService.java
+D:\DT\CollabBackEnd\src\main\java\com\niit\collab\controllers\ChatController.java
+D:\DT\CollabBackEnd\src\main\java\com\niit\collab\model\OutputMessage.java
 D:\DT\CollabBackEnd\src\main\java\com\niit\collab\controllers\LoginController.java
 D:\DT\CollabBackEnd\src\main\java\com\niit\collab\dao\BlogDAO.java
 D:\DT\CollabBackEnd\src\main\java\com\niit\service\BlogServiceImpl.java
@@ -33,4 +34,5 @@ D:\DT\CollabBackEnd\src\main\java\com\niit\collab\controllers\BlogController.jav
 D:\DT\CollabBackEnd\src\main\java\com\niit\collab\model\ForumComments.java
 D:\DT\CollabBackEnd\src\main\java\com\niit\service\ForumCommentsServiceImpl.java
 D:\DT\CollabBackEnd\src\main\java\com\niit\collab\dao\JobDAOImpl.java
+D:\DT\CollabBackEnd\src\main\java\com\niit\collab\model\Message.java
 D:\DT\CollabBackEnd\src\main\java\com\niit\collab\dao\ForumDAOImpl.java

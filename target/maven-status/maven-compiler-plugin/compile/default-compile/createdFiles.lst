@@ -16,14 +16,17 @@ com\niit\collab\dao\BlogDAO.class
 com\niit\collab\dao\ForumDAOImpl.class
 com\niit\collab\dao\UsersDAO.class
 com\niit\collab\controllers\LoginController.class
+com\niit\collab\controllers\ChatController.class
 com\niit\collab\controllers\ForumCommentController.class
 com\niit\collab\dao\UsersDAOImpl.class
+com\niit\collab\model\Message.class
 com\niit\collab\model\Forum.class
 com\niit\collab\dao\ForumDAO.class
 com\niit\collab\model\ForumComments.class
 com\niit\collab\model\Job.class
 com\niit\collab\dao\EventDAO.class
 com\niit\collab\dao\FriendDAO.class
+com\niit\collab\model\OutputMessage.class
 com\niit\service\BlogServiceImpl.class
 com\niit\collab\dao\JobDAOImpl.class
 com\niit\collab\model\Friend.class
