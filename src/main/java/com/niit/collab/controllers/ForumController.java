@@ -20,6 +20,8 @@ public class ForumController {
 	
 	@Autowired
 	private ForumService forumService;
+	@Autowired
+	ForumDAO forumDAO;
 
 	@PostMapping("/CreateForum")
 	public void CreateForum(@RequestBody Forum forum,HttpSession session) 
@@ -50,11 +52,11 @@ public class ForumController {
 	 	{
 	 		return false;
 	 	}	
-	/*@GetMapping(value="/individualforum/{id}")
+	@GetMapping(value="/individualforum/{id}")
 	public ResponseEntity<Forum> individualforum(@PathVariable("id") int id){
-		Forum forum=forumDAO.getforum(id);
+		Forum forum=forumDAO.getForum(id);
 		return new ResponseEntity<Forum>(forum,HttpStatus.OK);
-	}*/
+	}
 }
 
 
