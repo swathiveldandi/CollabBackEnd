@@ -56,4 +56,3 @@ public class BlogServiceImpl implements BlogService{
 		return blogDAO.getIndividualForum(blogid);
 	}
 }
-

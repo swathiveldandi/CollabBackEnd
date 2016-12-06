@@ -34,7 +34,7 @@ public class LoginController {
 	@PostMapping("/logout")
 	public ResponseEntity<Users> logout(HttpSession session){
 		int uid =  (Integer) session.getAttribute("uid");
-		Users users =usersDAO.getuser(uid);
+		Users users =usersDAO.logout(uid);
 		users.setStatus('f');
 		usersDAO.saveOrUpdate(users);
 		session.invalidate();

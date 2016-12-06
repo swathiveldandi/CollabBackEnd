@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,6 +34,11 @@ public ResponseEntity<List<Users>> listuser(){
 	return new ResponseEntity<List<Users>>(users1,HttpStatus.OK);
 	
 	
+}
+@GetMapping(value="/oneuser/{id}")
+public ResponseEntity<List<Users>> oneuser(@PathVariable("id") int id){
+	List<Users> oneuser=usersDAO.getuser(id);
+	return new ResponseEntity<List<Users>>(oneuser,HttpStatus.OK);
 }
 }
 

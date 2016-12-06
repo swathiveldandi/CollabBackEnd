@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.niit.collab.dao.ForumDAO;
 import com.niit.collab.model.Forum;
 import com.niit.service.ForumService;
 
@@ -49,6 +50,11 @@ public class ForumController {
 	 	{
 	 		return false;
 	 	}	
+	/*@GetMapping(value="/individualforum/{id}")
+	public ResponseEntity<Forum> individualforum(@PathVariable("id") int id){
+		Forum forum=forumDAO.getforum(id);
+		return new ResponseEntity<Forum>(forum,HttpStatus.OK);
+	}*/
 }
 
 

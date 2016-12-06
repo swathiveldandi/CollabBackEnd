@@ -21,8 +21,9 @@ public interface ForumDAO {
 	
 	/*Fetch single forum List object based on forumid*/
 	public List<Forum> getIndividualForum(int forumid);
+	/*public  Forum getforum(int id) ;*/
+		
+		
 	
 }
-
-
 

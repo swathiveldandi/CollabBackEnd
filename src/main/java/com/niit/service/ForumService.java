@@ -23,5 +23,5 @@ public interface ForumService {
 	/*Retrive Single Forum data and convert to JSON and saving in String */
 	public List<Forum> getSingleForum(int forumid);
 	
-
+	/*public Forum getforum(int id);*/
 }

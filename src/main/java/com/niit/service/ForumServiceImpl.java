@@ -3,8 +3,10 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.google.gson.Gson;
 import com.niit.collab.dao.ForumDAO;
@@ -48,12 +50,31 @@ public class ForumServiceImpl  implements ForumService{
 	{
 		 return forumDAO.getForum(forumid);
 	}
-	
+	/*public Forum getForum(int forumid)
+	{
+		 return forumDAO.getForum(forumid);
+	}*/
 	/*Retrive Single Forum data and convert to JSON and saving in String */
 	public List<Forum> getSingleForum(int forumid) 
 	{
 		return forumDAO.getIndividualForum(forumid);
 	}
 
+	
 
-}
+	/*@Transactional
+	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
+	public Forum getforum(int id) {
+		String hql = "from Forum where id= "+ "'"+ id+"'" ;
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		List<Forum>list= query.list();
+		
+		if(list==null)
+		{
+			return null;
+		}
+		else
+		{
+			return list.get(0);
+		}*/
+	}
