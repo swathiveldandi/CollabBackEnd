@@ -45,9 +45,9 @@ http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 	</mvc:interceptors>
 	
 	<bean id="multipartResolver"
- 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
- 		<property name="maxUploadSize" value="100000" />
- 	</bean>
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1000000" />
+	</bean>
 	
 	
 	<mvc:resources mapping="/resources/**" location="/resources/" />

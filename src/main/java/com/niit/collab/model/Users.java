@@ -27,6 +27,7 @@ package com.niit.collab.model;
 		private Date dob;
 		private String gender;
 		private char status;
+		private byte[] image;
 		public int getId() {
 			return id;
 		}
@@ -86,6 +87,12 @@ package com.niit.collab.model;
 		}
 		public void setStatus(char status) {
 			this.status = status;
+		}
+		public byte[] getImage() {
+			return image;
+		}
+		public void setImage(byte[] image) {
+			this.image = image;
 		}
 		
 	}
