@@ -17,8 +17,8 @@ public interface BlogDAO {
 	/*Delete single Blog object*/
 	public void deleteBlog(Blog blog);
 	
-	/*Fetch single blog object based on blogid*/
-	public Blog getBlog(int blogid);
+	public Blog get(int id);
+	/*public Blog getBlog(int blogid);*/
 
 	public List<Blog> getIndividualForum(int blogid);
 

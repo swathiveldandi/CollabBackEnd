@@ -18,7 +18,7 @@ public class BlogTest {
 		Blog blog =   (Blog) context.getBean("Blog");
 		
 		blog.setBid(10);
-		blog.setB_userid(10);
+		blog.setB_userid("goal");
 		blog.setBlogname("mobile");
 		blog.setBlogdesc("this is samsung mobile");
 		blog.setBlogtime("10");

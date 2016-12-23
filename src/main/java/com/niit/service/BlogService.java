@@ -23,6 +23,7 @@ public interface BlogService {
 	/*Retrive Single Blog data and convert to JSON and saving in String */
 	public List<Blog> getSingleBlog(int blogid);
 	
+	public Blog get(int id);
 }
 
 

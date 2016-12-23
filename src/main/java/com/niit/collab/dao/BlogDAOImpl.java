@@ -2,6 +2,7 @@ package com.niit.collab.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import com.niit.collab.model.Blog;
 
 
 @Repository
-@SuppressWarnings({"unchecked" , "deprecation"})
+
 public class BlogDAOImpl implements BlogDAO {
 
 	@Autowired
@@ -40,14 +41,29 @@ public class BlogDAOImpl implements BlogDAO {
 	}
 
 	/*Fetch single blog object based on blogid*/
-	@Transactional
+	/*@Transactional
 	public Blog getBlog(int blogid) {
 		Criteria c=sessionFactory.getCurrentSession().createCriteria(Blog.class);
 		c.add(Restrictions.eq("bid", blogid));
 		Blog blog=(Blog) c.uniqueResult();
 		return blog;
 	}
-
+*/
+	@Transactional
+	public Blog get(int id) {
+		String hql = "from Blog where id='"+ id+"'" ;
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		List<Blog>list= query.list();
+		
+		if(list==null)
+		{
+			return null;
+		}
+		else
+		{
+			return list.get(0);
+		}
+	}
 	@Transactional
 	public List<Blog> getIndividualForum(int blogid) {
 		Criteria c=sessionFactory.getCurrentSession().createCriteria(Blog.class);

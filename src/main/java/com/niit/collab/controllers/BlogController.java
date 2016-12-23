@@ -1,4 +1,6 @@
 package com.niit.collab.controllers;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.niit.collab.dao.BlogDAO;
+import com.niit.collab.dao.BlogLikesDAO;
 import com.niit.collab.model.Blog;
+import com.niit.collab.model.BlogLikes;
 import com.niit.service.BlogService;
 
 
@@ -20,6 +25,12 @@ public class BlogController {
 	
 	@Autowired
 	private BlogService blogService;
+	
+	@Autowired
+	private BlogDAO blogDAO;
+	
+	@Autowired
+	private BlogLikesDAO blogLikesDAO;
 
 	@PostMapping("/CreateBlog")
 	public void CreateBlog(@RequestBody Blog blog,HttpSession session) 
@@ -44,5 +55,29 @@ public class BlogController {
 	{
 		Blog blog=blogService.editBlog(blogid);
   		return new ResponseEntity<Blog>(blog, HttpStatus.OK);
+	}
+	@PostMapping(value="/likeblog/{blogid}")
+	public ResponseEntity<Blog> likeblog(BlogLikes blogLikes,@PathVariable("blogid") int bid,HttpSession session){
+		int uid=(Integer) session.getAttribute("uid");
+		blogLikes.setBlogid(bid);
+		blogLikes.setUserid(uid);
+		blogLikes.setLikes("like");
+		blogLikesDAO.saveOrUpdate(blogLikes);
+		List<BlogLikes> list=blogLikesDAO.bloglist(bid);
+		Blog blog=blogDAO.get(bid);
+		blog.setBloglike(list.size());
+		blogDAO.saveOrUpdate(blog);
+		return new ResponseEntity<Blog>(HttpStatus.OK);
+	}
+	@DeleteMapping(value="/unlikeblog/{blogid}")
+	public ResponseEntity<Blog> unlike(@PathVariable("blogid") int blogid,HttpSession session){
+		int uid=(Integer) session.getAttribute("uid");
+		BlogLikes blogLikes=blogLikesDAO.list(uid, blogid);
+		blogLikesDAO.delete(blogLikes);
+		List<BlogLikes> list=blogLikesDAO.bloglist(blogid);
+		Blog blog=blogDAO.get(blogid);
+		blog.setBloglike(list.size());
+		blogDAO.saveOrUpdate(blog);
+		return new ResponseEntity<Blog>(HttpStatus.OK);
 	}
 }

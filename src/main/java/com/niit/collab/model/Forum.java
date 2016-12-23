@@ -12,7 +12,7 @@ public class Forum {
 	@Id
 	@GeneratedValue
 	private int fid;
-	private int f_userid;
+	private String f_userid;
 	private String forumname;
 	private String forumdesc;
 	private String forumtime;
@@ -25,15 +25,14 @@ public class Forum {
 		this.fid = fid;
 	}
 
-	public int getF_userid() {
+	public String getF_userid() {
 		return f_userid;
 	}
 
-	public void setF_userid(int f_userid) {
+	public void setF_userid(String f_userid) {
 		this.f_userid = f_userid;
 	}
 
-	
 	public String getForumname() {
 		return forumname;
 	}

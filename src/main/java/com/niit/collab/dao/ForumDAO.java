@@ -17,7 +17,7 @@ public interface ForumDAO {
 	public void deleteForum(Forum forum);
 	
 	/*Fetch single forum object based on forumid*/
-	public Forum getForum(int forumid);
+	 public Forum getForum(int forumid);
 	
 	/*Fetch single forum List object based on forumid*/
 	public List<Forum> getIndividualForum(int forumid);

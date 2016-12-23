@@ -40,19 +40,24 @@ public class BlogServiceImpl implements BlogService{
 	/*Delete single blog based on blog id*/
 	public void deleteBlog(int blogid) 
 	{
-		Blog blog= blogDAO.getBlog(blogid);
+		Blog blog= blogDAO.get(blogid);
 		blogDAO.deleteBlog(blog);
 	}
 
 	/*Edit individual blog based on blog id*/
 	public Blog editBlog(int blogid)
 	{
-		 return blogDAO.getBlog(blogid);
+		 return blogDAO.get(blogid);
+		 
 	}
 	
 	/*Retrive Single Blog data and convert to JSON and saving in String */
 	public List<Blog> getSingleBlog(int blogid) 
 	{
 		return blogDAO.getIndividualForum(blogid);
+	}
+	public Blog get(int id)
+	{
+		 return blogDAO.get(id);
 	}
 }

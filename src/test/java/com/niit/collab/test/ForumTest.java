@@ -17,7 +17,7 @@ public class ForumTest {
 		Forum forum =   (Forum) context.getBean("Forum");
 		
 		forum.setFid(10);
-		forum.setF_userid(10);
+		forum.setF_userid("goal");
 		forum.setForumname("mobile");
 		forum.setForumdesc("this is samsung mobile");
 		forum.setForumtime("10");

@@ -12,10 +12,11 @@ package com.niit.collab.model;
 		@Id
 		@GeneratedValue
 		private int bid;
-		private int b_userid;
+		private String b_userid;
 		private String blogname;
 		private String blogdesc;
 		private String blogtime;
+		private Integer bloglike;
 		
 		public int getBid() {
 			return bid;
@@ -23,13 +24,13 @@ package com.niit.collab.model;
 		public void setBid(int bid) {
 			this.bid = bid;
 		}
-		public int getB_userid() {
+		
+		public String getB_userid() {
 			return b_userid;
 		}
-		public void setB_userid(int b_userid) {
+		public void setB_userid(String b_userid) {
 			this.b_userid = b_userid;
 		}
-				
 		public String getBlogname() {
 			return blogname;
 		}
@@ -47,6 +48,12 @@ package com.niit.collab.model;
 		}
 		public void setBlogtime(String blogtime) {
 			this.blogtime = blogtime;
+		}
+		public Integer getBloglike() {
+			return bloglike;
+		}
+		public void setBloglike(Integer bloglike) {
+			this.bloglike = bloglike;
 		}
 	
 }
